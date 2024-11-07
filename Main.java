@@ -10,5 +10,6 @@ public class Main {
         TodoListRepository todoListRepository = new TodoListRepositoryImpl();
         TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
         TodoListView todoListView = new TodoListTerminalView(todoListService);
+        todoListView.run();
     }
 }

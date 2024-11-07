@@ -13,11 +13,6 @@ public class TodoListTerminalView implements TodoListView {
         this.todoListService = todoListService;
     }
 
-    @Override
-    public void run() {
-        showMainMenu();
-    }
-
     public void showMainMenu() {
         // infinite loop so the program will always run
         boolean isRunning = true;
@@ -103,8 +98,13 @@ public class TodoListTerminalView implements TodoListView {
         for (var i = 0; i < todos.length; i++) {
             var todo = todos[i];
             if (todo != null) {
-                System.out.println((i + 1) + ". " + todo);
+                System.out.println((i + 1) + ". " + todo.getTodo());
             }
         }
+    }
+
+    @Override
+    public void run() {
+        showMainMenu();
     }
 }
